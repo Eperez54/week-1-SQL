@@ -4,7 +4,8 @@
 
 -- 2. What are the different numbers of engines in the planes table? For each number of engines, which aircraft have 
 --   the most number of seats? Show the SQL statement(s) that support your result.
-	select engine, max(seats) as 'Seats'  from planes group by engine order by Seats desc;
+	SELECT dest as Destination FROM flights WHERE distance > 0 ORDER BY distance DESC
+	select engine, max(seats) as 'Seats'  from planes group by engine order by Seats desc limit 1;
        
 -- 3. Show the total number of flights.
 	select	count(flight) from flights;
